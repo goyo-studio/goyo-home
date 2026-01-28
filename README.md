@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Goyo Studio
+
+Building AI-powered products, Micro SaaS, and practical utilities.
+
+We design, build, and ship production-ready software with a strong focus on simplicity, speed, and real-world usefulness.
+
+## Tech Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **Icons**: Lucide React
+- **Fonts**: Inter, JetBrains Mono
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── globals.css      # Design system colors and fonts
+│   ├── layout.tsx       # Root layout
+│   └── page.tsx         # Landing page
+└── components/
+    ├── Header.tsx           # Navigation header
+    ├── HeroSection.tsx      # Hero with headline and CTAs
+    ├── ServicesSection.tsx  # Service cards
+    ├── MonthlySection.tsx   # Monthly projects showcase
+    ├── HowWeWorkSection.tsx # Process steps
+    ├── AboutSection.tsx     # About the studio
+    ├── CTASection.tsx       # Contact call-to-action
+    └── Footer.tsx           # Footer with links
+```
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Fully responsive design (mobile, tablet, desktop)
+- Dark theme with cyan accent colors
+- Smooth scroll navigation
+- Mobile hamburger menu
+- Optimized fonts with next/font
 
-## Learn More
+## License
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Copyright 2026 Goyo Studio. All rights reserved.
