@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  /* Goyo Studio Landing Page Colors */
+  --background-dark: #0A0F1C;
+  --background-section: #0F172A;
+  --card-background: #1E293B;
+  --card-border: #2E3A4D;
+  --accent-cyan: #22D3EE;
+  --accent-cyan-light: #22D3EE20;
+  --accent-cyan-subtle: #22D3EE10;
+  --text-primary: #FFFFFF;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  --text-dark: #475569;
+  --text-black: #0A0F1C;
+  --divider: #1E293B;
+}
+
+@theme inline {
+  --color-background-dark: var(--background-dark);
+  --color-background-section: var(--background-section);
+  --color-card-background: var(--card-background);
+  --color-card-border: var(--card-border);
+  --color-accent-cyan: var(--accent-cyan);
+  --color-accent-cyan-light: var(--accent-cyan-light);
+  --color-accent-cyan-subtle: var(--accent-cyan-subtle);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-text-dark: var(--text-dark);
+  --color-text-black: var(--text-black);
+  --color-divider: var(--divider);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+@layer base {
+  html, body {
+    height: 100%;
+  }
+
+  .font-primary {
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  .font-mono {
+    font-family: var(--font-jetbrains-mono), "JetBrains Mono", monospace;
+  }
+
+  .icon-font {
+    font-family: "Material Symbols Rounded", sans-serif;
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+}
+
+body {
+  background: var(--background-dark);
+  color: var(--text-primary);
+}
