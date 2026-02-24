@@ -13,8 +13,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Goyo Studio - Building AI-powered products, Micro SaaS, and practical utilities",
-  description: "We design, build, and ship production-ready software with a strong focus on simplicity, speed, and real-world usefulness.",
+  title: "Goyo Studio - Building minimal software",
+  description: "Simplifying, refining — steadily.",
 };
 
 export default function RootLayout({

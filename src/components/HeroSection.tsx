@@ -2,32 +2,27 @@
 
 export default function HeroSection() {
   return (
-    <section className="flex flex-col items-center gap-[32px] lg:gap-[40px] w-full px-[20px] lg:px-[120px] pt-[60px] lg:pt-[120px] pb-[80px] lg:pb-[140px]">
-      {/* Hero Content */}
-      <div className="flex flex-col items-center gap-[20px] lg:gap-[24px] w-full lg:w-[900px]">
-        <h1 className="font-primary text-[32px] lg:text-[56px] font-bold text-text-primary text-center leading-[1.2] lg:leading-[1.1] w-full lg:w-[900px]">
-          Building AI-powered products, Micro SaaS, and practical utilities
-        </h1>
-        <p className="font-primary text-[16px] lg:text-[20px] text-text-secondary text-center leading-[1.6] w-full lg:w-[700px]">
-          We design, build, and ship production-ready software with a strong
-          focus on simplicity, speed, and real-world usefulness.
-        </p>
-      </div>
+    <section
+      className="relative flex flex-col items-center justify-center w-full px-[20px] lg:px-[120px] pt-[80px] lg:pt-[180px] pb-[80px] lg:pb-[120px] bg-cover bg-center"
+      style={{ backgroundImage: "url('/minimal_background.jpg')" }}
+    >
+      {/* Gradient overlay */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(to bottom, #0A0F1C40 0%, #0A0F1C90 70%, #0A0F1CE8 100%)",
+        }}
+      />
 
-      {/* Hero CTAs */}
-      <div className="flex flex-col lg:flex-row items-center gap-[12px] lg:gap-[16px] w-full lg:w-auto">
-        <a
-          href="#contact"
-          className="flex items-center justify-center gap-[8px] px-[24px] lg:px-[32px] py-[14px] lg:py-[16px] bg-accent-cyan rounded-[8px] text-[15px] lg:text-[16px] font-semibold text-text-black hover:opacity-90 transition-opacity w-full lg:w-auto"
-        >
-          Contact for a project
-        </a>
-        <a
-          href="#projects"
-          className="flex items-center justify-center gap-[8px] px-[24px] lg:px-[32px] py-[14px] lg:py-[16px] rounded-[8px] border border-[#475569] text-[15px] lg:text-[16px] font-medium text-text-primary hover:border-text-secondary transition-colors w-full lg:w-auto"
-        >
-          View current projects
-        </a>
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center gap-[16px] lg:gap-[20px] w-full lg:w-[900px]">
+        <h1 className="font-primary text-[36px] lg:text-[64px] font-light text-white tracking-[-0.8px] lg:tracking-[-1px] leading-[1.15] text-center">
+          Building minimal software
+        </h1>
+        <p className="font-primary text-[17px] lg:text-[22px] text-[#FFFFFFCC] text-center lg:w-[720px] leading-[1.6]">
+          Simplifying, refining — steadily
+        </p>
       </div>
     </section>
   );

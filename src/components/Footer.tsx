@@ -1,86 +1,61 @@
 "use client";
 
-import { Github, Twitter, Linkedin } from "lucide-react";
+import Link from "next/link";
+import { Mail } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col gap-[32px] lg:gap-[40px] w-full px-[20px] lg:px-[120px] py-[40px] lg:py-[60px] bg-background-dark border-t border-divider">
-      {/* Footer Top */}
-      <div className="flex flex-col lg:flex-row items-center lg:justify-between gap-[24px] lg:gap-0 w-full">
-        {/* Brand */}
-        <div className="flex flex-col items-center lg:items-start gap-[8px]">
-          <span className="font-mono text-[16px] lg:text-[18px] font-semibold text-text-primary">
-            Goyo Studio
-          </span>
-          <span className="font-primary text-[13px] lg:text-[14px] text-text-muted text-center lg:text-left">
-            Building software that ships.
-          </span>
+    <footer className="flex flex-col gap-[24px] lg:gap-[32px] w-full px-[20px] lg:px-[120px] py-[32px] lg:py-[48px] bg-footer-bg">
+      {/* Top */}
+      <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-[24px]">
+        {/* Logo + Tagline */}
+        <div className="flex flex-col gap-[8px]">
+          <Link href="/" className="flex items-baseline gap-[4px]">
+            <span className="font-primary text-[22px] font-medium text-white tracking-[0.4px]">
+              Goyo
+            </span>
+            <span className="font-primary text-[18px] font-light text-text-footer tracking-[0.2px]">
+              Studio
+            </span>
+          </Link>
+          <p className="font-primary text-[14px] text-text-footer">
+            Focus on real problems. Build minimal. Nothing more.
+          </p>
         </div>
 
         {/* Links */}
-        <nav className="flex items-center justify-center gap-[24px] lg:gap-[32px] w-full lg:w-auto">
-          <a
-            href="#services"
-            className="font-primary text-[13px] lg:text-[14px] font-medium text-text-secondary hover:text-text-primary transition-colors"
-          >
-            Services
-          </a>
-          <a
-            href="#projects"
-            className="font-primary text-[13px] lg:text-[14px] font-medium text-text-secondary hover:text-text-primary transition-colors"
-          >
-            Projects
-          </a>
-          <a
-            href="#about"
-            className="font-primary text-[13px] lg:text-[14px] font-medium text-text-secondary hover:text-text-primary transition-colors"
-          >
-            About
-          </a>
-          <a
-            href="#contact"
-            className="font-primary text-[13px] lg:text-[14px] font-medium text-text-secondary hover:text-text-primary transition-colors"
-          >
-            Contact
-          </a>
-        </nav>
+        <Link
+          href="#projects"
+          className="font-primary text-[14px] font-medium text-text-footer hover:text-white transition-colors duration-150 ease-out"
+        >
+          Products
+        </Link>
       </div>
 
       {/* Divider */}
-      <div className="w-full h-[1px] bg-card-background" />
+      <div className="w-full h-[1px] bg-footer-divider" />
 
-      {/* Footer Bottom */}
-      <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-[16px] lg:gap-0 w-full">
-        {/* Copyright */}
-        <span className="font-primary text-[12px] lg:text-[13px] text-text-dark text-center">
+      {/* Bottom */}
+      <div className="flex items-center justify-between">
+        <span className="font-primary text-[13px] text-text-footer">
           &copy; 2026 Goyo Studio. All rights reserved.
         </span>
-
-        {/* Social Icons */}
-        <div className="flex items-center gap-[20px] lg:gap-[16px]">
+        <div className="flex items-center gap-[16px]">
           <a
-            href="https://github.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-text-muted hover:text-text-primary transition-colors"
+            href="mailto:developer@goyostudio.io"
+            className="text-text-footer hover:text-white transition-colors duration-150 ease-out"
           >
-            <Github className="w-[20px] h-[20px]" />
+            <Mail className="w-[18px] h-[18px]" />
           </a>
           <a
-            href="https://twitter.com"
+            href="https://x.com/goyo_studio"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-text-muted hover:text-text-primary transition-colors"
+            className="text-text-footer hover:text-white transition-colors duration-150 ease-out"
           >
-            <Twitter className="w-[20px] h-[20px]" />
-          </a>
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-text-muted hover:text-text-primary transition-colors"
-          >
-            <Linkedin className="w-[20px] h-[20px]" />
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
           </a>
         </div>
       </div>
