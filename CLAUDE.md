@@ -23,8 +23,10 @@
 src/
 ├── app/
 │   ├── globals.css      # CSS variables + @theme inline (디자인 토큰)
-│   ├── layout.tsx       # 루트 레이아웃 (폰트 설정)
-│   └── page.tsx         # 랜딩 페이지 (섹션 조합)
+│   ├── layout.tsx       # 루트 레이아웃 (폰트, 메타데이터, Organization JSON-LD)
+│   ├── page.tsx         # 랜딩 페이지 (섹션 조합)
+│   ├── robots.ts        # robots.txt 생성
+│   └── sitemap.ts       # 동적 sitemap (홈 + 전체 제품)
 ├── components/
 │   ├── Header.tsx       # 네비게이션 (모바일 햄버거 메뉴)
 │   ├── HeroSection.tsx  # 히어로 영역
@@ -34,6 +36,9 @@ src/
 │   ├── AboutSection.tsx      # 스튜디오 소개
 │   ├── CTASection.tsx        # 연락처 CTA
 │   └── Footer.tsx            # 푸터
+├── lib/
+│   ├── products.ts      # Product 인터페이스 + detail.md 파싱
+│   └── jsonld.ts        # JSON-LD 헬퍼 (Organization, Breadcrumb, SoftwareApplication, HowTo, VideoObject)
 └── products/            # 제품 스펙 문서 (detail.md, logo.png, capture.png)
 ```
 
@@ -164,3 +169,45 @@ src/
 | 04 | Daily Art Ritual | Designing (Feb 2026) |
 
 제품 스펙은 `src/products/{번호}_{이름}/detail.md` 형식으로 관리.
+
+### detail.md 필드
+
+| 섹션 | 필수 | 용도 |
+|------|------|------|
+| `## Name` | ✅ | 제품명 |
+| `## Subtitle` | ✅ | 한 줄 설명 (meta description 폴백) |
+| `## Status` | ✅ | Released / Building / Designing |
+| `## Date` | ✅ | 출시월 (예: "January 2026") |
+| `## Problem` | ✅ | 해결하려는 문제 |
+| `## Description` | ✅ | 제품 설명 (meta description, JSON-LD description으로 사용) |
+| `## Happy Case Scenario` | ✅ | 사용 단계 (HowTo JSON-LD) |
+| `## Video` | ✅ | YouTube URL (VideoObject JSON-LD) |
+| `## Access` | ✅ | 다운로드/구매 URL |
+| `## Price` | | 가격 숫자 (예: "5"). 없으면 JSON-LD에서 "0" (무료) |
+| `## Price Currency` | | 통화 코드 (예: "USD"). 없으면 "USD" 기본값 |
+
+## SEO
+
+### 자동 처리 (새 제품 추가 시 별도 작업 불필요)
+
+- **메타데이터**: `generateMetadata()`가 제품별 title, description, canonical, OG, Twitter 자동 생성
+- **sitemap.xml**: `getAllProducts()`로 전체 제품 URL 자동 포함
+- **JSON-LD**: Breadcrumb, SoftwareApplication, HowTo, VideoObject 자동 생성
+- **시맨틱 HTML**: `<article>`, `<h2>` 구조 적용됨
+
+### JSON-LD 스키마 (`src/lib/jsonld.ts`)
+
+| 스키마 | 적용 위치 | 데이터 소스 |
+|--------|----------|------------|
+| `Organization` | 루트 레이아웃 | 하드코딩 (goyostudio.io) |
+| `BreadcrumbList` | 제품 페이지 | product.name, product.slug |
+| `SoftwareApplication` | 제품 페이지 | description, price, priceCurrency, capturePath |
+| `HowTo` | 제품 페이지 | happyCaseSteps |
+| `VideoObject` | 제품 페이지 | videoUrl, date (ISO 8601 자동 변환) |
+
+### 설계 결정
+
+- `operatingSystem`은 `jsonld.ts`에 `"macOS"` 하드코딩 (현재 모든 제품 macOS)
+- `description` 필드가 meta description + JSON-LD description 겸용 (별도 summary 필드 불필요)
+- `product.date` ("January 2026") → ISO 8601 ("2026-01-01") 자동 변환
+- 배포 후 [Rich Results Test](https://search.google.com/test/rich-results)로 구조화 데이터 유효성 검증
