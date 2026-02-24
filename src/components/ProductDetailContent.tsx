@@ -21,7 +21,7 @@ export default function ProductDetailContent({
   const hasVideo = !!product.videoUrl;
 
   return (
-    <div className="flex flex-col w-full">
+    <article className="flex flex-col w-full">
       {/* Hero */}
       <section className={`flex flex-col lg:flex-row lg:items-center lg:justify-between gap-[16px] ${sectionPx} border-b border-border-subtle`}>
         <div className="flex items-center gap-[24px]">
@@ -80,9 +80,9 @@ export default function ProductDetailContent({
       {/* Problem */}
       {product.problem && (
         <section className={`flex flex-col gap-[16px] ${sectionPx} border-b border-border-subtle`}>
-          <span className="font-primary text-[13px] font-semibold text-text-tertiary tracking-[3px] uppercase">
+          <h2 className="font-primary text-[13px] font-semibold text-text-tertiary tracking-[3px] uppercase">
             PROBLEM
-          </span>
+          </h2>
           <p className="font-primary text-[16px] lg:text-[18px] text-text-primary leading-[1.8]">
             {product.problem}
           </p>
@@ -92,9 +92,9 @@ export default function ProductDetailContent({
       {/* How to Solve */}
       {product.description && (
         <section className={`flex flex-col gap-[16px] ${sectionPx} border-b border-border-subtle`}>
-          <span className="font-primary text-[13px] font-semibold text-text-tertiary tracking-[3px] uppercase">
+          <h2 className="font-primary text-[13px] font-semibold text-text-tertiary tracking-[3px] uppercase">
             HOW TO SOLVE
-          </span>
+          </h2>
           <p className="font-primary text-[16px] lg:text-[18px] text-text-primary leading-[1.8] whitespace-pre-line">
             {product.description}
           </p>
@@ -108,9 +108,9 @@ export default function ProductDetailContent({
             {/* Left: Steps */}
             {hasSteps && (
               <div className="flex flex-col gap-[24px] flex-1">
-                <span className="font-primary text-[13px] font-semibold text-text-tertiary tracking-[3px] uppercase">
+                <h2 className="font-primary text-[13px] font-semibold text-text-tertiary tracking-[3px] uppercase">
                   HOW IT WORKS
-                </span>
+                </h2>
                 <ol className="flex flex-col gap-[12px]">
                   {product.happyCaseSteps.map((step, i) => (
                     <li key={i} className="flex items-center gap-[12px]">
@@ -129,9 +129,9 @@ export default function ProductDetailContent({
             {/* Right: Video */}
             {hasVideo && (
               <div className="flex flex-col gap-[16px] flex-1">
-                <span className="font-primary text-[13px] font-semibold text-text-tertiary tracking-[3px] uppercase">
+                <h2 className="font-primary text-[13px] font-semibold text-text-tertiary tracking-[3px] uppercase">
                   VIDEO
-                </span>
+                </h2>
                 {getYouTubeId(product.videoUrl) ? (
                   <div className="relative w-full aspect-video rounded-[8px] overflow-hidden">
                     <iframe
@@ -161,9 +161,9 @@ export default function ProductDetailContent({
       {/* Access */}
       {product.accessUrl && (
         <section className={`flex flex-col gap-[20px] p-[32px_20px] lg:p-[56px_64px_80px_64px]`}>
-          <span className="font-primary text-[13px] font-semibold text-text-tertiary tracking-[3px] uppercase">
+          <h2 className="font-primary text-[13px] font-semibold text-text-tertiary tracking-[3px] uppercase">
             ACCESS
-          </span>
+          </h2>
           <a
             href={product.accessUrl}
             target="_blank"
@@ -174,6 +174,6 @@ export default function ProductDetailContent({
           </a>
         </section>
       )}
-    </div>
+    </article>
   );
 }
