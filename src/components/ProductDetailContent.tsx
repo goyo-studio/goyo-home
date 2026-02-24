@@ -21,10 +21,10 @@ export default function ProductDetailContent({
   const hasVideo = !!product.videoUrl;
 
   return (
-    <article className="flex flex-col w-full">
+    <article className="flex flex-col w-full min-w-0">
       {/* Hero */}
       <section className={`flex flex-col lg:flex-row lg:items-center lg:justify-between gap-[16px] ${sectionPx} border-b border-border-subtle`}>
-        <div className="flex items-center gap-[24px]">
+        <div className="flex flex-col gap-[16px] lg:flex-row lg:items-center lg:gap-[24px] min-w-0">
           {product.logoPath && (
             <Image
               src={product.logoPath}
@@ -34,7 +34,7 @@ export default function ProductDetailContent({
               className="rounded-[14px] shrink-0"
             />
           )}
-          <div className="flex flex-col gap-[6px]">
+          <div className="flex flex-col gap-[6px] min-w-0">
             <h1 className="font-primary text-[28px] lg:text-[36px] font-semibold text-text-dark tracking-[-0.8px]">
               {product.name}
             </h1>
