@@ -1,5 +1,11 @@
 import type { Product } from "./products";
 
+function toISODate(dateStr: string): string {
+  const parsed = new Date(dateStr);
+  if (isNaN(parsed.getTime())) return dateStr;
+  return parsed.toISOString().split("T")[0];
+}
+
 function getYouTubeId(url: string): string | null {
   const match = url.match(
     /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([a-zA-Z0-9_-]{11})/
@@ -54,6 +60,12 @@ export function softwareApplicationJsonLd(product: Product) {
     description: product.description || product.subtitle,
     url: `https://goyostudio.io/products/${product.slug}`,
     applicationCategory: "UtilitiesApplication",
+    operatingSystem: "macOS",
+    offers: {
+      "@type": "Offer",
+      price: product.price || "0",
+      priceCurrency: product.priceCurrency || "USD",
+    },
     ...(product.capturePath && {
       screenshot: `https://goyostudio.io${product.capturePath}`,
     }),
@@ -91,6 +103,6 @@ export function videoObjectJsonLd(product: Product) {
     description: product.subtitle,
     thumbnailUrl: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
     embedUrl: `https://www.youtube.com/embed/${videoId}`,
-    uploadDate: product.date,
+    uploadDate: toISODate(product.date),
   };
 }

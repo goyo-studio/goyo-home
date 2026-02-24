@@ -14,6 +14,8 @@ export interface Product {
   happyCaseSteps: string[];
   videoUrl: string;
   accessUrl: string;
+  price?: string;
+  priceCurrency?: string;
 }
 
 const productsDir = path.join(process.cwd(), "src/products");
@@ -50,6 +52,8 @@ function parseDetailMd(content: string): Omit<Product, "slug" | "logoPath" | "ca
     happyCaseSteps: steps,
     videoUrl: trim("Video"),
     accessUrl: trim("Access"),
+    price: trim("Price") || undefined,
+    priceCurrency: trim("Price Currency") || undefined,
   };
 }
 

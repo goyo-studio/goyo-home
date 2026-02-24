@@ -47,3 +47,11 @@ https://youtu.be/Xrc1TMcoU34?si=5NI7vtn2bAX4-dYk
 
 https://goyostudioai.gumroad.com/l/youtube_downloader
 
+## Price
+
+5
+
+## Price Currency
+
+USD
+
