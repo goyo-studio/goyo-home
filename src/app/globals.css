@@ -49,8 +49,8 @@
   --color-border-strong: var(--border-strong);
   --color-footer-bg: var(--footer-bg);
   --color-footer-divider: var(--footer-divider);
-  --font-sans: var(--font-inter);
-  --font-mono: var(--font-jetbrains-mono);
+  --font-sans: var(--font-geist);
+  --font-mono: var(--font-geist-mono);
 }
 
 @layer base {
@@ -59,11 +59,11 @@
   }
 
   .font-primary {
-    font-family: var(--font-inter), "Inter", sans-serif;
+    font-family: var(--font-geist), "Geist", sans-serif;
   }
 
   .font-mono {
-    font-family: var(--font-jetbrains-mono), "JetBrains Mono", monospace;
+    font-family: var(--font-geist-mono), "Geist Mono", monospace;
   }
 }
 

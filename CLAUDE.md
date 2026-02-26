@@ -8,7 +8,7 @@
 - **Language**: TypeScript (strict mode)
 - **Styling**: Tailwind CSS v4 (`@tailwindcss/postcss`)
 - **Icons**: Lucide React
-- **Fonts**: Inter (body, headings), JetBrains Mono (dates, code) — via `next/font/google`
+- **Fonts**: Geist (body, headings), Geist Mono (dates, code) — via `next/font/google`
 - **Path alias**: `@/*` → `./src/*`
 
 ## Commands
@@ -44,7 +44,7 @@ src/
 
 ## Pencil Design File
 
-디자인 원본: `/Users/jeong-yeong-yun/Documents/untitled.pen`
+디자인 원본: `/Users/jeong-yeong-yun/Documents/goyohome.pen`
 
 ### Design Frames
 
@@ -96,16 +96,16 @@ src/
 
 | Level | Font | Size | Weight | Letter Spacing |
 |-------|------|------|--------|----------------|
-| H1 Hero | Inter | 36px (mobile) / 64px (desktop) | 300 (Light) | -1px |
-| H2 Section | Inter | 24px | 400 | -0.5px |
-| H3 Card | Inter | 22px | 600 | -0.3px |
-| Body | Inter | 18px | 400 | — |
-| Caption | Inter | 13px | 500 | 3px (uppercase) |
-| Date | JetBrains Mono | 13px | 500 | — |
+| H1 Hero | Geist | 36px (mobile) / 64px (desktop) | 300 (Light) | -1px |
+| H2 Section | Geist | 24px | 400 | -0.5px |
+| H3 Card | Geist | 22px | 600 | -0.3px |
+| Body | Geist | 18px | 400 | — |
+| Caption | Geist | 13px | 500 | 3px (uppercase) |
+| Date | Geist Mono | 13px | 500 | — |
 
 ### Logo
 
-- "Goyo" — Inter 500 + "Studio" — Inter 300, 장식 없음
+- "Goyo" — Geist 500 + "Studio" — Geist 300, 장식 없음
 - Light variant: `#3D4F5F` on white
 - Dark variant (footer): white on `#1A2332`
 

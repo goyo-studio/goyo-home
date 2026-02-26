@@ -25,7 +25,7 @@ export default function MonthlySection({ products }: { products: Product[] }) {
       </div>
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-[16px] lg:gap-[32px] w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-[16px] lg:gap-[32px] w-full">
         {products.map((product) => (
           <ProjectCard key={product.slug} product={product} />
         ))}

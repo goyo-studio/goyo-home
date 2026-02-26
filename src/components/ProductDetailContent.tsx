@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Calendar } from "lucide-react";
+import { Calendar, ArrowUpRight } from "lucide-react";
 import type { Product } from "@/lib/products";
 
 function getYouTubeId(url: string): string | null {
@@ -168,9 +168,10 @@ export default function ProductDetailContent({
             href={product.accessUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-[28px] py-[16px] bg-accent-primary hover:bg-accent-hover text-text-on-accent font-primary text-[16px] font-semibold rounded-[8px] transition-colors duration-150 w-full lg:w-fit"
+            className="inline-flex items-center justify-center gap-[10px] px-[28px] py-[16px] bg-accent-primary hover:bg-accent-hover text-text-on-accent font-primary text-[16px] font-semibold rounded-[8px] transition-colors duration-150 w-full lg:w-fit"
           >
             Get the app
+            <ArrowUpRight className="w-[18px] h-[18px]" />
           </a>
         </section>
       )}
