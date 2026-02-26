@@ -20,6 +20,9 @@ export const metadata: Metadata = {
     template: "%s - Goyo Studio",
   },
   description: "Simplifying, refining — steadily.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     siteName: "Goyo Studio",
